@@ -18,6 +18,8 @@ github = GitHub(app)
 
 @app.route('/')
 def index():
+  if 'oauth_token' not in session:
+    return redirect(url_for('login'))
 
   prs = [issue for issue in github.get('issues?per_page=100&filter=all') if 'pull_request' in issue]
 
