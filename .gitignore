@@ -1,0 +1,8 @@
+.virtualenv
+.DS_Store
+*.py[co]
+__pycache__
+.coverage
+.cache
+*.log
+pip-log.txt
