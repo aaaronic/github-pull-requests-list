@@ -3,6 +3,7 @@ import os
 from flask import Flask, request, g, session, redirect, url_for, escape
 from flask import render_template_string, render_template
 from flask.ext.github import GitHub
+from flask_sslify import SSLify
 
 from lib import *
 
@@ -13,6 +14,7 @@ app.config.from_object(__name__)
 app.config['GITHUB_CLIENT_ID'] = os.environ['GITHUB_CLIENT_ID']
 app.config['GITHUB_CLIENT_SECRET'] = os.environ['GITHUB_CLIENT_SECRET']
 
+sslify = SSLify(app)
 
 github = GitHub(app)
 
